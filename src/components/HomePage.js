@@ -18,15 +18,6 @@ export default function Home() {
   const [loading, setLoading] = useState(true);
   const [mapID] = useState(new Map()); // Initialize Map
 
-  // function calculXP(obj) {
-  //   let sum = 0;
-  //   for (const i in obj) {
-  //     sum = obj[i];
-  //     console.log("object bi " + sum);
-  //   }
-  //   return sum;
-  // }
-
   useEffect(() => {
     async function fetchData() {
       try {

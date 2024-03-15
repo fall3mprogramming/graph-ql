@@ -3,8 +3,20 @@ import React from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
+
 export default function Login() {
   const navigate = useNavigate();
+
+  React.useEffect(() => {
+    // Vérifier si le token existe dans le localStorage
+    const token = localStorage.getItem("token");
+    if (token) {
+      // Rediriger vers la page "/home"
+      navigate("/home");
+    }
+  }, []); // Cette fonction s'exécute une seule fois après le rendu initial
+
+
   // Déclarer un state pour stocker la valeur saisie
   function toBase64(str) {
     let encoder = new TextEncoder();
