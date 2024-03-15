@@ -228,14 +228,13 @@ export default function Home() {
                       justifyContent: "center",
                     }}
                   >
-                    <div>
+                    <div className="text-black bg-gray-900 h-[490px] m-5">
                       <CurveComponent
                         transactionsData={curveData}
                         mapID={mapID}
-                        className="w-full max-w-60"
                       />
                     </div>
-                    <div className="bg-gray-200 h-[490px] flex items-center rounded-lg m-5">
+                    <div className="bg-gray-200 h-[490px] flex items-center m-5">
                       <CircleComponent
                         upTransaction={upTransaction}
                         downTransaction={downTransaction}

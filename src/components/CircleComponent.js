@@ -18,8 +18,8 @@ const PieChart = ({ downTransaction, upTransaction }) => {
       .attr("transform", `translate(${width / 2},${height / 2})`);
 
     const colorMap = {
-      up: "#4ade80",
-      down: "#6366f1"
+      up: "#0047AB",
+      down: "#fff"
     };
 
     const pie = d3.pie().value((d) => d);
@@ -41,7 +41,8 @@ const PieChart = ({ downTransaction, upTransaction }) => {
           .style("visibility", "visible")
           .text(`${percent}%`)
           .style("left", (event.pageX + 10) + "px")
-          .style("top", (event.pageY - 15) + "px");
+          .style("top", (event.pageY - 15) + "px")
+          .style("color", "green"); 
       })
       
 
@@ -53,13 +54,13 @@ const PieChart = ({ downTransaction, upTransaction }) => {
   }, [upTransaction, downTransaction]);
 
   return (
-    <div className="">
-      <h1 className="text-black ml-8 mt-4">Circle Diagram</h1>
+    <div className="bg-gray-900">
+      <h1 className="text-white ml-8 mt-4">Circle Diagram</h1>
       <svg ref={svgRef}></svg>
       <div id="tooltip" style={{ position: 'absolute', visibility: 'hidden' }}></div>
       <div className="flex justify-between mb-4">
-        <span className="bg-indigo-500 w-32 rounded ml-4 text-center">Down Ratio</span>
-        <span className="bg-green-500 w-32 rounded mr-4 text-center">Up Ratio</span>
+        <span className="text-white w-32  ml-4 text-center">Down Ratio : {downTransaction}</span>
+        <span className="text-blue-600 w-32  mr-4 text-center">Up Ratio : {upTransaction}</span>
       </div>
     </div>
   );
